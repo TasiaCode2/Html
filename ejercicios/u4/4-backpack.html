@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Cotizaciones - Backpacks S.A. de C.V</title>
+</head>
+<body>
+    <h1>Formulario de Cotizaciones</h1>
+    <form action="#" method="post">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        <label for="email">Correo Electrónico:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="telefono">Teléfono:</label><br>
+        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" required placeholder="Número de 10 dígitos"><br><br>
+        <label for="detalles">Detalles del Producto y/o Servicio:</label><br>
+        <textarea id="detalles" name="detalles" rows="3" cols="30" required></textarea><br><br>
+        <input type="submit" value="Enviar Cotización">
+    </form>
+</body>
+</html>
