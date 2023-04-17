@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa de diseño</title>
+</head>
+<body>
+    <h1>Cambio de Color de Fondo</h1>
+    <button onclick="cambiarColorFondo()">Cambiar Color</button>
+
+    <script>
+        let cambiarColorFondo = () => {
+          var colores = ["red", "green", "blue", "yellow", "purple"];
+          var colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+    
+          document.body.style.backgroundColor = colorAleatorio;
+        }
+      </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contable S.A. de C.V.</title>
+</head>
+<body>
+    <h1>Suma de Números</h1>
+    <p>Ingresa dos números para obtener su suma:</p>
+    <input type="number" id="numero1" placeholder="Primer número">
+    <input type="number" id="numero2" placeholder="Segundo número">
+    <button onclick="enviar()">Sumar</button>
+    <p id="resultado"></p>
+
+    <script>
+        let sumar = (numero1, numero2) => numero1 + numero2;
+
+        let enviar = () => {
+            var numero1 = parseFloat(document.getElementById('numero1').value);
+            var numero2 = parseFloat(document.getElementById('numero2').value);
+
+            if (isNaN(numero1) || isNaN(numero2)) {
+                document.getElementById('resultado').textContent = 'Error: Ambos campos deben ser números';
+                return;
+            }
+
+            let resultado = sumar(numero1, numero2);
+            document.getElementById('resultado').textContent = 'Resultado: ' + resultado;
+        }
+    </script>
+</body>
+</html>
