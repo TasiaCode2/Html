@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #myObject {
+          width: 50px;
+          height: 50px;
+          background-color: red;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: transform 0.3s ease;
+        }
+      </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="myObject"></div>
+    <script>
+        const myObject = document.getElementById('myObject');
+    
+        window.addEventListener('keydown', (event) => {
+            const key = event.key;
+        
+            if (key === 'a' || key === 'ArrowLeft') {
+                myObject.style.transform = `translateX(-50px)`;
+            }
+            
+            if (key === 'd' || key === 'ArrowRight') {
+                myObject.style.transform = `translateX(50px)`;
+            }
+            if (key === 'w' || key === 'ArrowUp') {
+                myObject.style.transform = `translateY(-50px)`;
+            }
+      
+            if (key === 's' || key === 'ArrowDown') {
+                myObject.style.transform = `translateY(50px)`;
+            }
+        });
+    </script>
+</body>
+</html>

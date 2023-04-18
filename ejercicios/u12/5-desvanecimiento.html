@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myObject {
+          width: 200px;
+          height: 200px;
+          background-color: blue;
+          opacity: 1;
+          transition: opacity 0.5s;
+          color: white;
+          text-align: center;
+          font-size: 24px;
+          cursor: pointer;
+          line-height: 200px;
+        }
+      </style>
+</head>
+<body>
+    <div id="myObject">Haz click</div>
+    <script>
+        const myObject = document.getElementById('myObject');
+
+        function fadeOut() {
+            myObject.style.opacity = 0; // Cambiar la opacidad del objeto a 0
+        }
+
+        myObject.addEventListener('click', fadeOut);
+    </script>
+</body>
+</html>

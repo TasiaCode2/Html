@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myObject {
+          width: 200px;
+          height: 200px;
+          background-color: red;
+          color: white;
+          text-align: center;
+          line-height: 200px;
+          font-size: 24px;
+          cursor: pointer;
+          transition: background-color 0.5s;
+        }
+      </style>
+</head>
+<body>
+    <div id="myObject">Haz click</div>
+    <script>
+        const myObject = document.getElementById('myObject');
+
+        function cambiarColor() {
+            const randomColor = calcularColorRandom(); 
+            myObject.style.backgroundColor = randomColor;
+        }
+
+        myObject.addEventListener('click', cambiarColor);
+
+        function calcularColorRandom() {
+            const letras = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letras[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
