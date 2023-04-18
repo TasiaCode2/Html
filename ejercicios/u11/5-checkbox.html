@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Checkboxes</h1>
+    <form action="#">
+        <input type="checkbox" id="opcion1" name="opciones" value="opcion1">
+        <label for="opcion1">Opción 1</label>
+        <input type="checkbox" id="opcion2" name="opciones" value="opcion2">
+        <label for="opcion2">Opción 2</label>
+        <input type="checkbox" id="opcion3" name="opciones" value="opcion3">
+        <label for="opcion3">Opción 3</label>
+        <button id="submitBtn">Validar</button>
+        <div id="error" style="display:none;color:red;">Selecciona al menos una opción.</div>
+    </form>
+
+    <script>
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const submitBtn = document.getElementById('submitBtn');
+        const opcionesError = document.getElementById('error');
+
+        submitBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            let alMenosUnaSeleccionada = false;
+
+            checkboxes.forEach((checkbox) => {
+                if (checkbox.checked)
+                    alMenosUnaSeleccionada = true;
+            });
+
+            if (!alMenosUnaSeleccionada) {
+                opcionesError.style.display = 'block';
+                return;
+            }
+
+            opcionesError.style.display = 'none';
+            
+        });
+
+    </script>
+</body>
+</html>

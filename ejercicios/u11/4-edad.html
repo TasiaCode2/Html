@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar edad</title>
+</head>
+<body>
+    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+    <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+    <button id="submitBtn">Validar</button>
+    <div id="error" style="display:none;color:red;">Debes ser mayor de edad para registrarte en este foro.</div>
+    
+    <script>
+        const fechaNacimientoInput = document.getElementById('fechaNacimiento');
+        const submitBtn = document.getElementById('submitBtn');
+        const edadError = document.getElementById('error');
+
+        submitBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const fechaNacimiento = new Date(fechaNacimientoInput.value);
+            const ahora = new Date();
+            const edadMinima = 18;
+
+            const diferenciaAnios = ahora.getFullYear() - fechaNacimiento.getFullYear();
+
+            if (diferenciaAnios < edadMinima) {
+                edadError.style.display = 'block';
+                return;
+            }
+            
+            edadError.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

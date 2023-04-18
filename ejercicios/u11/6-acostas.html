@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar contraseñas</title>
+</head>
+<body>
+
+    <form action="">
+        <input type="password" id="password1" name="password1">
+        <label for="password1">Contraseña 1</label>
+        <input type="password" id="password2" name="password2">
+        <label for="password2">Contraseña 2</label>
+        <button id="submitBtn">Validar</button>
+        <div id="error" style="display:none;color:red;">Las contraseñas no coinciden.</div>
+    </form>
+
+    <script>
+        const password1 = document.getElementById('password1');
+        const password2 = document.getElementById('password2');
+        const submitBtn = document.getElementById('submitBtn');
+        const passwordError = document.getElementById('error');
+
+        submitBtn.addEventListener('click', (event) => {
+            event.preventDefault(); 
+
+            const passwordValue1 = password1.value;
+            const passwordValue2 = password2.value;
+
+            if (passwordValue1 !== passwordValue2) {
+                passwordError.style.display = 'block';
+                return;
+            }
+            
+            if (passwordValue1.length < 1 || passwordValue2.length < 1) {
+                alert("Rellene todos los campos.");
+                return;
+            }
+
+            passwordError.style.display = 'none';
+            alert("Contraseñas válidas");
+        });
+
+    </script>
+</body>
+</html>

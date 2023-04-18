@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar vacío</title>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <form onsubmit="return validarFormulario()">
+        <label for="campo">Campo:</label>
+        <input type="text" id="campo" name="campo">
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+    <script>
+        function validarFormulario() {
+            var campo = document.getElementById("campo").value;
+            if (campo === "") {
+                alert("Por favor, completa el campo.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
