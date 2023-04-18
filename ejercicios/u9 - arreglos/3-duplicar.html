@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dobles</title>
+</head>
+<body>
+    <h1>Números del 1 al 10 multiplicados por dos</h1>
+    <script>
+        const numeros = [1, 2, 3, 4, 5];
+        let dobles = numeros.map(numero => numero * 2);
+
+        const lista = document.createElement('ul');
+
+        for (const numero of dobles) {
+            const item = document.createElement('li');
+            item.textContent = numero;
+            lista.appendChild(item);
+        }
+
+        document.body.appendChild(lista);
+    </script>
+</body>
+</html>

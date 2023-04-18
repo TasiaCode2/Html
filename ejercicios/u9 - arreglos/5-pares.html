@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pares</title>
+</head>
+<body>
+    <h1>Pares</h1>
+    <script>
+        const numeros = [5, 10, 15, 20, 25];
+        const pares = numeros.filter(numero => numero % 2 === 0);
+    
+        const parrafo = document.createElement('p');
+        parrafo.textContent = `Números pares: ${pares.join(", ")}`;
+    
+        document.body.appendChild(parrafo);
+    </script>
+</body>
+</html>
