@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="elementoPadre">
+        <p>Elemento padre</p>
+        <p id="nodoHijo">Nodo hijo a eliminar</p>
+        <p>Elemento hijo</p>
+    </div>
+    
+    <button onclick="eliminarNodoHijo()">Eliminar nodo hijo</button>
+
+    <script>
+        let eliminarNodoHijo = () => {
+            var elementoPadre = document.getElementById('elementoPadre');
+
+            var nodoHijo = document.getElementById('nodoHijo');
+
+            if (nodoHijo) {
+                elementoPadre.removeChild(nodoHijo);
+            }
+        }
+    </script>
+</body>
+</html>

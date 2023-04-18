@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="imagen" src="img1.webp" alt="Imagen original">
+
+    <button onclick="cambiarAtributo()">Cambiar atributo de la imagen</button>
+
+    <script>
+        let cambiarAtributo = () => {
+            var imagen = document.getElementById('imagen');
+
+            if (imagen) {
+                imagen.setAttribute('src', 'img2.jfif');
+                imagen.setAttribute('alt', 'Nueva imagen');
+            }
+        }
+    </script>
+</body>
+</html>

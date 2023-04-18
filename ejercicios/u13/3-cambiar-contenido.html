@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="miNodo">
+        <p>Contenido original del nodo</p>
+      </div>
+    
+      <button onclick="cambiarContenido()">Cambiar contenido del nodo</button>
+
+    <script>
+        function cambiarContenido() {
+        var miNodo = document.getElementById('miNodo');
+
+            if (miNodo) {
+                miNodo.innerHTML = 'Nuevo contenido del nodo';
+            }
+        }
+    </script>
+</body>
+</html>
