@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extraction</title>
+</head>
+<body>
+    <h1>Extracción de números</h1>
+    <label for="cadena">Introduce una cadena de caracteres:</label><br>
+    <textarea id="cadena" rows="4" cols="50"></textarea><br>
+    <button onclick="extraerNumeros()">Extraer números</button><br>
+    <p id="resultado"></p>
+    
+    <script>
+      let extraerNumeros = () => {
+        const cadena = document.getElementById("cadena").value;
+        const numeros = cadena.match(/\d+/g);
+        const resultado = numeros ? numeros.join(", ") : "No se encontraron números";
+        document.getElementById("resultado").textContent = resultado;
+      }
+    </script>
+</body>
+</html>

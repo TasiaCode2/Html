@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar telefono</title>
+</head>
+<body>
+    <h1>Validación de Número de Teléfono</h1>
+    <form onsubmit="return false;">
+        <label for="numeroTelefono">Número de Teléfono:</label>
+        <input type="text" id="numeroTelefono">
+        <button onclick="validarFormulario()">Validar</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        const validarNumeroTelefono = (numero) => {
+            const telefonoRegex = /^\d{10}$/;
+            return telefonoRegex.test(numero) ? "" :  "no";
+        }
+
+        const validarFormulario = () => {
+            const numeroTelefono = document.getElementById("numeroTelefono").value;
+            document.getElementById("resultado").innerHTML = `El número de teléfono ${validarNumeroTelefono(numeroTelefono)} es válido`;
+        }
+     </script>
+</body>
+</html>

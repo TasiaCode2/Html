@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reemplazar</title>
+</head>
+<body>
+    <form id="reemplazarForm">
+        <label for="fraseInput">Frase:</label><br>
+        <textarea id="fraseInput" rows="4" cols="50">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        </textarea>
+        <br>
+        <label for="palabraBuscarInput">Palabra a Buscar:</label><br>
+        <input type="text" id="palabraBuscarInput" value="ipsum"><br>
+        <label for="palabraReemplazarInput">Palabra a Reemplazar:</label><br>
+        <input type="text" id="palabraReemplazarInput" value="dolor"><br><br>
+        <input type="button" value="Reemplazar" onclick="reemplazarPalabra()">
+    </form>
+
+    <script>
+        let reemplazarPalabra = () => {
+            const textArea = document.getElementById("fraseInput");
+            const frase = textArea.value;
+
+            const palabraBuscar = new RegExp(document.getElementById("palabraBuscarInput").value, "g");
+            const palabraReemplazar = document.getElementById("palabraReemplazarInput").value;
+
+            const fraseModificada = frase.replace(palabraBuscar, palabraReemplazar);
+            textArea.value = fraseModificada;
+        }
+    </script>
+</body>
+</html>
